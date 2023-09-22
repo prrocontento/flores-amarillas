@@ -25,9 +25,11 @@ export function NameInput(props) {
     >
       <input
         placeholder="Ingresa tu nombre"
+        type="text"
+        inputMode="none"
         value={props.name}
         onChange={handleChange}
-        style={{ width: "80%", height: "32px" }}
+        style={{ width: "80%", height: "32px", touchAction: "manipulation" }}
       />
       <button
         style={{ background: "#008CBA", width: "52%" }}
