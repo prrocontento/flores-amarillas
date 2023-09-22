@@ -26,7 +26,6 @@ export function NameInput(props) {
       <input
         placeholder="Ingresa tu nombre"
         type="text"
-        inputMode="none"
         value={props.name}
         onChange={handleChange}
         style={{ width: "80%", height: "32px" }}
