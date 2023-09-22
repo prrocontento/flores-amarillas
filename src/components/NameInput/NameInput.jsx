@@ -8,7 +8,12 @@ export function NameInput(props) {
     setLocalName(e.target.value);
   };
   const setGlobalName = () => {
-    props.setName(localName.toUpperCase().split(""));
+    props.setName(
+      localName
+        .toUpperCase()
+        .split("")
+        .filter((char) => char !== " ")
+    );
     props.setShowInput(false);
   };
 
