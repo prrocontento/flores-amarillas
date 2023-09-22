@@ -29,7 +29,7 @@ export function NameInput(props) {
         inputMode="none"
         value={props.name}
         onChange={handleChange}
-        style={{ width: "80%", height: "32px", touchAction: "manipulation" }}
+        style={{ width: "80%", height: "32px" }}
       />
       <button
         style={{ background: "#008CBA", width: "52%" }}
