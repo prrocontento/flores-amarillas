@@ -16,14 +16,17 @@ function App() {
           style={{
             display: "flex",
             flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <span>Aqui están tus flores amarillas</span>
+          <span>🌼 Aqui están tus flores amarillas 🌼</span>
           <div
             style={{
               display: "flex",
               justifyContent: "space-around",
               width: "100%",
+              marginRight: window.innerWidth > 768 ? "0" : "44px",
             }}
           >
             {name.map((char, index) => (

@@ -1,44 +1,75 @@
 .sunflower {
   position: relative;
-  height: 30px;
-  width: 30px;
+  margin: 0 8px; /* Este es el margen predeterminado */
+}
+
+@media (min-width: 769px) {
+  .sunflower {
+    margin: 0; /* Cuando la pantalla es mayor a 768px de ancho, el margen es 0 */
+  }
 }
 .head {
   animation: hmove 2s infinite linear;
   height: 50px;
-  width: 62px;
+  width: 32px;
   position: relative;
   left: 8px;
   top: 39px;
   transform-origin: 50% -7px;
   user-select: none;
 }
+@media (min-width: 769px) {
+  .head {
+    width: 40px; /* Cuando la pantalla es mayor a 768px de ancho, el margen es 0 */
+  }
+}
 .head .eye {
   background: #43699a;
   border-radius: 10px;
   height: 5px;
   position: absolute;
-  top: 30px;
+  top: 24px;
   width: 5px;
 }
+@media (min-width: 769px) {
+  .head .eye {
+    top: 30px;
+  }
+}
 .head .eye#eye-1 {
-  left: 17px;
+  left: 32px;
   animation: eye 4s linear infinite normal 0.5s;
 }
+@media (min-width: 769px) {
+  .head .eye#eye-1 {
+    left: 17px;
+  }
+}
 .head .eye#eye-2 {
-  right: 17px;
+  right: 14px;
   animation: eye 4s linear infinite normal 0.5s;
+}
+@media (min-width: 769px) {
+  .head .eye#eye-2 {
+    left: 28px;
+  }
 }
 .head .mouth {
   background: #ecf0f1;
   border-radius: 30px;
-  bottom: 2px;
+  bottom: 8px;
   clip: rect(8px, 15px, 16px, 0);
   height: 16px;
-  margin-left: -7.5px;
+  margin-left: 1.5px;
   position: absolute;
   left: 50%;
   width: 15px;
+}
+@media (min-width: 769px) {
+  .head .mouth {
+    margin-left: -7.5px;
+    bottom: 2px;
+  }
 }
 
 .petals {
@@ -46,18 +77,23 @@
   border-radius: 100%;
   display: inline-block;
   background-color: #faaa18;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   position: absolute;
   animation: petals 2s infinite linear;
   box-shadow: 15px 17px #ffe000, -15px 17px #ffe000, -22px -7px #ffe000,
     0px -22px #ffe000, 22px -7px #ffe000;
 }
+@media (min-width: 769px) {
+  .petals {
+    height: 50px;
+    width: 50px;
+  }
+}
 .trunk {
   height: 65px;
   width: 5px;
   background: #77b039;
-  left: 37px;
   top: 100px;
   position: absolute;
   z-index: -2;
@@ -107,10 +143,15 @@
   top: 165px;
   left: 13px;
   height: 0;
-  width: 38px;
+  width: 28px;
   border-top: 45px solid #faaa18;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
+}
+@media (min-width: 769px) {
+  .vase {
+    width: 38px; /* Cuando la pantalla es mayor a 768px de ancho, el margen es 0 */
+  }
 }
 .vase:before,
 .vase:after {
@@ -120,7 +161,7 @@
 }
 .vase:before {
   background: #f9a018;
-  width: 58px;
+  width: 48px;
   height: 20px;
   top: -50px;
   left: -10px;
@@ -129,6 +170,11 @@
   -moz-transform: 0 5px 10px -9px black;
   -ms-transform: 0 5px 10px -9px black;
   -o-transform: 0 5px 10px -9px black;
+}
+@media (min-width: 769px) {
+  .vase:before {
+    width: 58px; /* Cuando la pantalla es mayor a 768px de ancho, el margen es 0 */
+  }
 }
 
 @keyframes petals {
@@ -183,6 +229,7 @@
     height: 5px;
   }
 }
+/* qui centro el tallo */
 @keyframes trunk {
   0% {
     left: 34px;
@@ -205,6 +252,32 @@
     transform: rotate(-5deg);
   }
 }
+
+@media (max-width: 768px) {
+  @keyframes trunk {
+    0% {
+      left: 32px; /* 10 pixeles menos que el valor original cuando la pantalla es menor a 768px */
+      transform: rotate(-5deg);
+    }
+    25% {
+      left: 34px; /* 10 pixeles menos que el valor original cuando la pantalla es menor a 768px */
+      transform: rotate(5deg);
+    }
+    50% {
+      left: 32px; /* 10 pixeles menos que el valor original cuando la pantalla es menor a 768px */
+      transform: rotate(-5deg);
+    }
+    75% {
+      left: 34px; /* 10 pixeles menos que el valor original cuando la pantalla es menor a 768px */
+      transform: rotate(5deg);
+    }
+    100% {
+      left: 32px; /* 10 pixeles menos que el valor original cuando la pantalla es menor a 768px */
+      transform: rotate(-5deg);
+    }
+  }
+}
+
 body {
   background: #ffffff;
   text-align: center;
